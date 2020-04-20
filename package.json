@@ -1,10 +1,10 @@
 {
-  "name": "gatsby-source-goodreads",
-  "version": "0.2.0",
-  "description": "Get the public books from a shelf in Goodreads for use in Gatsby.",
+  "name": "gatsby-source-goodreads-b",
+  "version": "0.3.0",
+  "description": "Get the public shelves and books for a Goodreads user for use in Gatsby.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DanielOliver/gatsby-source-goodreads.git"
+    "url": "git+https://github.com/balsick/gatsby-source-goodreads.git"
   },
   "bundleDependencies": false,
   "keywords": [
@@ -12,14 +12,14 @@
     "gatsby",
     "gatsby-plugin"
   ],
-  "author": "Daniel Oliver <danieloliversoftware@gmail.com> (https://www.olivercoding.com/)",
+  "author": "Enrico Balsamo <balsick@gmail.com> (https://www.balsick.it/)",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.17.1",
     "xml2js": "^0.4.19"
   },
   "bugs": {
-    "url": "https://github.com/DanielOliver/gatsby-source-goodreads/issues"
+    "url": "https://github.com/balsick/gatsby-source-goodreads/issues"
   },
-  "homepage": "https://github.com/DanielOliver/gatsby-source-goodreads#readme"
+  "homepage": "https://github.com/balsick/gatsby-source-goodreads#readme"
 }
