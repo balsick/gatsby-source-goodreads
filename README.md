@@ -1,6 +1,6 @@
 # gatsby-source-goodreads
 
-Source plugin for pulling your read books into Gatsby from Goodreads API.
+Source plugin for pulling your shelved books into Gatsby from Goodreads API.
 
 ## How to use
 ```javascript
@@ -13,6 +13,7 @@ module.exports = {
         developerKey: "IAmDeveloperKey",
         goodReadsUserId: "IAmGoodreadsUserId",
         userShelf: "to-read" //optional
+        userShelves: ['to-read','currently-reading','custom-shelf',...] //optional
       }
     }
   ],
@@ -24,6 +25,9 @@ module.exports = {
 * **developerKey**: Use your [Goodreads developer API key](https://www.goodreads.com/api/keys)
 * **goodReadsUserId**: The Goodreads user ID of the user to get data for.
 * **userShelf**: _OPTIONAL_. read, currently-reading, to-read, etc.
+* **userShelves**: _OPTIONAL_. An array containing the names of the shelves to query.
+
+If neither **userShelf** nor **userShelves** are set, all the user shelves are queried.
 
 ## How to query your Goodread data using GraphQL
 
@@ -31,30 +35,42 @@ Below is a sample query for fetching the shelf's books.
 
 ```graphql
 query goodRead {
-  goodreadsShelf {
-    id
+  goodreadsShelves {
+    goodreadsShelf {
+      shelfName
+      reviews {
+        book {
+          title
+          smallImageUrl
+          link
+          description
+        }
+        dateAdded
+        rating
+      }
+    }
+  }
+}
+```
+
+## Data structure
+
+You can query all the set shelves, some shelves only or a single shelf.
+For querying a single shelf, a query like this can be used.
+```
+query goodRead {
+  goodreadsShelf(shelfName: {eq: "to-read"}) {
     shelfName
     reviews {
       reviewID
       rating
       votes
       spoilerFlag
+      spoilersState
       dateAdded
       dateUpdated
-      body
       book {
         bookID
-        isbn
-        isbn13
-        textReviewsCount
-        uri
-        link
-        title
-        titleWithoutSeries
-        imageUrl
-        smallImageUrl
-        largeImageUrl
-        description
       }
     }
   }
