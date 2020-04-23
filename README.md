@@ -3,12 +3,17 @@
 Source plugin for pulling your shelved books into Gatsby from Goodreads API.
 
 ## How to use
+Install the plugin
+```sh
+npm i @balsick/gatsby-source-goodreads
+```
+Then configure the plugin in `gatsby-config.js`
 ```javascript
 // In your gatsby-config.js
 module.exports = {
   plugins: [
     {
-      resolve: "gatsby-source-goodreads",
+      resolve: "@balsick/gatsby-source-goodreads",
       options: {
         developerKey: "IAmDeveloperKey",
         goodReadsUserId: "IAmGoodreadsUserId",

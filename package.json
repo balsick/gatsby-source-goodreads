@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-source-goodreads-b",
+  "name": "@balsick/gatsby-source-goodreads",
   "version": "0.3.2f",
   "description": "Get the public shelves and books for a Goodreads user for use in Gatsby.",
   "repository": {
