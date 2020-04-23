@@ -58,8 +58,6 @@ query goodRead {
 }
 ```
 
-## Data structure
-
 You can query all the set shelves, some shelves only or a single shelf.
 For querying a single shelf, a query like this can be used.
 
